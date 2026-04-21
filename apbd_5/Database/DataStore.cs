@@ -15,10 +15,15 @@ public class DataStore
     
     public static int NextRoomId => Rooms.Count > 0 ? Rooms.Max(r => r.Id) + 1 : 1;
     
+    public static int NextReservationId => Reservations.Count > 0 ? Reservations.Max(r => r.Id) + 1 : 1;
+
+    
     public static List<Reservation> Reservations { get; } = new()
     {
         new Reservation { Id = 1, RoomId = 1, OrganizerName = "Anna", Topic = "C# Dev", Date = new DateOnly(2026, 5, 10), StartTime = new TimeOnly(10, 0), EndTime = new TimeOnly(12, 0), Status = "confirmed" },
         new Reservation { Id = 2, RoomId = 2, OrganizerName = "Piotr", Topic = "Java Intro", Date = new DateOnly(2026, 5, 10), StartTime = new TimeOnly(14, 0), EndTime = new TimeOnly(16, 0), Status = "planned" },
-        new Reservation { Id = 3, RoomId = 1, OrganizerName = "Max", Topic = "Web API", Date = new DateOnly(2026, 5, 11), StartTime = new TimeOnly(9, 0), EndTime = new TimeOnly(11, 0), Status = "confirmed" }
+        new Reservation { Id = 3, RoomId = 1, OrganizerName = "Max", Topic = "Web API", Date = new DateOnly(2026, 5, 11), StartTime = new TimeOnly(9, 0), EndTime = new TimeOnly(11, 0), Status = "confirmed" },
+        new Reservation { Id = 4, RoomId = 3, OrganizerName = "Olena", Topic = "Project Sync", Date = new DateOnly(2026, 5, 12), StartTime = new TimeOnly(11, 0), EndTime = new TimeOnly(12, 0), Status = "confirmed" 
+    }
     };
 }
